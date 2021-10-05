@@ -20,4 +20,8 @@ object CustomDialogObj {
                 }
             }).show()
     }
+    fun dismiss()
+    {
+
+    }
 }
