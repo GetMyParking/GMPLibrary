@@ -12,7 +12,7 @@ import java.util.*
 
 public class BluetoothLeService : Service() {
     private val TAG: String =
-        BluetoothLeService::class.java.getSimpleName()
+        BluetoothLeService::class.java.simpleName
 
     private var mBluetoothManager: BluetoothManager? = null
     private var mBluetoothAdapter: BluetoothAdapter? = null

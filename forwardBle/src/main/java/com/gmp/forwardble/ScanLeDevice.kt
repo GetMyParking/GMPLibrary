@@ -1,4 +1,4 @@
-package com.gmp.forwardlemodule
+package com.gmp.forwardble
 
 import android.bluetooth.BluetoothAdapter
 import android.bluetooth.BluetoothManager
