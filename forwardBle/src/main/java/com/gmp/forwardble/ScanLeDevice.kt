@@ -27,6 +27,10 @@ object ScanLeDevice {
         mBluetoothAdapter = bluetoothManager.adapter
         bluetoothLeScanner = mBluetoothAdapter?.bluetoothLeScanner
     }
+    fun getBluetoothAdapter():BluetoothAdapter?
+    {
+        return mBluetoothAdapter
+    }
      fun startScanLeDevice(scanCallback: ScanCallback) {
 
             // Stops scanning after a pre-defined scan period.
