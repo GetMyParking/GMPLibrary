@@ -11,9 +11,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/customDialog" />
             <option value="$PROJECT_DIR$/forwardBle" />
-            <option value="$PROJECT_DIR$/progressModule" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

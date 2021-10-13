@@ -1,4 +1,4 @@
-com.example.androidsdk
+com.gmp.gmplibrary
 anim abc_fade_in
 anim abc_fade_out
 anim abc_grow_fade_in_from_bottom
@@ -1925,7 +1925,7 @@ id bounce
 id bounceBoth
 id bounceEnd
 id bounceStart
-id btnDialog
+id btnSend
 id buttonPanel
 id cache_measures
 id cancel_button
@@ -2004,6 +2004,7 @@ id end
 id endToStart
 id enterAlways
 id enterAlwaysCollapsed
+id etContent
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
@@ -2059,6 +2060,7 @@ id line3
 id linear
 id listMode
 id list_item
+id llContent
 id masked
 id match_constraint
 id match_parent
@@ -2152,6 +2154,7 @@ id percent
 id pin
 id position
 id postLayout
+id progressBar
 id progress_circular
 id progress_horizontal
 id radio
@@ -2164,6 +2167,7 @@ id right_icon
 id right_side
 id rounded
 id row_index_key
+id rvDeviceList
 id save_non_transition_alpha
 id save_overlay_view
 id sawtooth
@@ -2276,6 +2280,9 @@ id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
 id triangle
+id tvConnectionStatus
+id tvDeviceAddress
+id tvDeviceName
 id unchecked
 id uniform
 id unlabeled
@@ -2382,6 +2389,7 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
+layout device_item
 layout material_chip_input_combo
 layout material_clock_display
 layout material_clock_display_divider
@@ -2947,7 +2955,6 @@ style TextAppearance_MaterialComponents_Tooltip
 style TextAppearance_Widget_AppCompat_ExpandedMenu_Item
 style TextAppearance_Widget_AppCompat_Toolbar_Subtitle
 style TextAppearance_Widget_AppCompat_Toolbar_Title
-style Theme_AndroidSdk
 style Theme_AppCompat
 style Theme_AppCompat_CompactMenu
 style Theme_AppCompat_DayNight
@@ -2976,6 +2983,7 @@ style Theme_Design_Light
 style Theme_Design_Light_BottomSheetDialog
 style Theme_Design_Light_NoActionBar
 style Theme_Design_NoActionBar
+style Theme_GmpLibrary
 style Theme_MaterialComponents
 style Theme_MaterialComponents_BottomSheetDialog
 style Theme_MaterialComponents_Bridge

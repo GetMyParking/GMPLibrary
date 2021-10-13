@@ -4,7 +4,7 @@
     "type": "PACKAGED_MANIFESTS",
     "kind": "Directory"
   },
-  "applicationId": "com.example.androidsdk",
+  "applicationId": "com.gmp.gmplibrary",
   "variantName": "debug",
   "elements": [
     {

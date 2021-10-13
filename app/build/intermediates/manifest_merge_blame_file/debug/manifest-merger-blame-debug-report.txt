@@ -1,47 +1,80 @@
 1<?xml version="1.0" encoding="utf-8"?>
 2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-3    package="com.example.androidsdk"
+3    package="com.gmp.gmplibrary"
 4    android:versionCode="1"
 5    android:versionName="1.0" >
 6
 7    <uses-sdk
-8        android:minSdkVersion="16"
-8-->/Users/gmp/Documents/POC_SDK/app/src/main/AndroidManifest.xml
+8        android:minSdkVersion="22"
+8-->/Users/gmp/Downloads/GMPLibrary/app/src/main/AndroidManifest.xml
 9        android:targetSdkVersion="30" />
-9-->/Users/gmp/Documents/POC_SDK/app/src/main/AndroidManifest.xml
+9-->/Users/gmp/Downloads/GMPLibrary/app/src/main/AndroidManifest.xml
 10
-11    <application
-11-->/Users/gmp/Documents/POC_SDK/app/src/main/AndroidManifest.xml:5:5-19:19
-12        android:allowBackup="true"
-12-->/Users/gmp/Documents/POC_SDK/app/src/main/AndroidManifest.xml:6:9-35
-13        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-13-->[androidx.core:core:1.6.0] /Users/gmp/.gradle/caches/transforms-2/files-2.1/3b4b2ff73537da458ffce892e09dd840/core-1.6.0/AndroidManifest.xml:24:18-86
-14        android:debuggable="true"
-15        android:icon="@mipmap/ic_launcher"
-15-->/Users/gmp/Documents/POC_SDK/app/src/main/AndroidManifest.xml:7:9-43
-16        android:label="@string/app_name"
-16-->/Users/gmp/Documents/POC_SDK/app/src/main/AndroidManifest.xml:8:9-41
-17        android:roundIcon="@mipmap/ic_launcher_round"
-17-->/Users/gmp/Documents/POC_SDK/app/src/main/AndroidManifest.xml:9:9-54
-18        android:supportsRtl="true"
-18-->/Users/gmp/Documents/POC_SDK/app/src/main/AndroidManifest.xml:10:9-35
-19        android:testOnly="true"
-20        android:theme="@style/Theme.AndroidSdk" >
-20-->/Users/gmp/Documents/POC_SDK/app/src/main/AndroidManifest.xml:11:9-48
-21        <activity android:name="com.example.androidsdk.MainActivity" >
-21-->/Users/gmp/Documents/POC_SDK/app/src/main/AndroidManifest.xml:12:9-18:20
-21-->/Users/gmp/Documents/POC_SDK/app/src/main/AndroidManifest.xml:12:19-47
-22            <intent-filter>
-22-->/Users/gmp/Documents/POC_SDK/app/src/main/AndroidManifest.xml:13:13-17:29
-23                <action android:name="android.intent.action.MAIN" />
-23-->/Users/gmp/Documents/POC_SDK/app/src/main/AndroidManifest.xml:14:17-69
-23-->/Users/gmp/Documents/POC_SDK/app/src/main/AndroidManifest.xml:14:25-66
-24
-25                <category android:name="android.intent.category.LAUNCHER" />
-25-->/Users/gmp/Documents/POC_SDK/app/src/main/AndroidManifest.xml:16:17-77
-25-->/Users/gmp/Documents/POC_SDK/app/src/main/AndroidManifest.xml:16:27-74
-26            </intent-filter>
-27        </activity>
-28    </application>
-29
-30</manifest>
+11    <uses-feature
+11-->/Users/gmp/Downloads/GMPLibrary/app/src/main/AndroidManifest.xml:5:5-89
+12        android:name="android.hardware.bluetooth_le"
+12-->/Users/gmp/Downloads/GMPLibrary/app/src/main/AndroidManifest.xml:5:19-63
+13        android:required="true" />
+13-->/Users/gmp/Downloads/GMPLibrary/app/src/main/AndroidManifest.xml:5:64-87
+14
+15    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+15-->/Users/gmp/Downloads/GMPLibrary/app/src/main/AndroidManifest.xml:6:5-79
+15-->/Users/gmp/Downloads/GMPLibrary/app/src/main/AndroidManifest.xml:6:22-76
+16    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+16-->/Users/gmp/Downloads/GMPLibrary/app/src/main/AndroidManifest.xml:7:5-81
+16-->/Users/gmp/Downloads/GMPLibrary/app/src/main/AndroidManifest.xml:7:22-78
+17    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+17-->/Users/gmp/Downloads/GMPLibrary/app/src/main/AndroidManifest.xml:8:5-85
+17-->/Users/gmp/Downloads/GMPLibrary/app/src/main/AndroidManifest.xml:8:22-82
+18    <uses-permission android:name="android.permission.BLUETOOTH" />
+18-->/Users/gmp/Downloads/GMPLibrary/app/src/main/AndroidManifest.xml:10:5-67
+18-->/Users/gmp/Downloads/GMPLibrary/app/src/main/AndroidManifest.xml:10:22-65
+19    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+19-->/Users/gmp/Downloads/GMPLibrary/app/src/main/AndroidManifest.xml:11:5-73
+19-->/Users/gmp/Downloads/GMPLibrary/app/src/main/AndroidManifest.xml:11:22-71
+20    <uses-permission android:name="android.permission.Bluetooth.android.hardware.bluetooth_le" />
+20-->/Users/gmp/Downloads/GMPLibrary/app/src/main/AndroidManifest.xml:12:5-97
+20-->/Users/gmp/Downloads/GMPLibrary/app/src/main/AndroidManifest.xml:12:22-95
+21
+22    <application
+22-->/Users/gmp/Downloads/GMPLibrary/app/src/main/AndroidManifest.xml:13:5-29:19
+23        android:allowBackup="true"
+23-->/Users/gmp/Downloads/GMPLibrary/app/src/main/AndroidManifest.xml:14:9-35
+24        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+24-->[androidx.core:core:1.6.0] /Users/gmp/.gradle/caches/transforms-2/files-2.1/3b4b2ff73537da458ffce892e09dd840/core-1.6.0/AndroidManifest.xml:24:18-86
+25        android:debuggable="true"
+26        android:icon="@mipmap/ic_launcher"
+26-->/Users/gmp/Downloads/GMPLibrary/app/src/main/AndroidManifest.xml:15:9-43
+27        android:label="@string/app_name"
+27-->/Users/gmp/Downloads/GMPLibrary/app/src/main/AndroidManifest.xml:16:9-41
+28        android:roundIcon="@mipmap/ic_launcher_round"
+28-->/Users/gmp/Downloads/GMPLibrary/app/src/main/AndroidManifest.xml:17:9-54
+29        android:supportsRtl="true"
+29-->/Users/gmp/Downloads/GMPLibrary/app/src/main/AndroidManifest.xml:18:9-35
+30        android:testOnly="true"
+31        android:theme="@style/Theme.GmpLibrary" >
+31-->/Users/gmp/Downloads/GMPLibrary/app/src/main/AndroidManifest.xml:19:9-48
+32        <activity android:name="com.gmp.gmplibrary.MainActivity" >
+32-->/Users/gmp/Downloads/GMPLibrary/app/src/main/AndroidManifest.xml:20:9-26:20
+32-->/Users/gmp/Downloads/GMPLibrary/app/src/main/AndroidManifest.xml:20:19-47
+33            <intent-filter>
+33-->/Users/gmp/Downloads/GMPLibrary/app/src/main/AndroidManifest.xml:21:13-25:29
+34                <action android:name="android.intent.action.MAIN" />
+34-->/Users/gmp/Downloads/GMPLibrary/app/src/main/AndroidManifest.xml:22:17-69
+34-->/Users/gmp/Downloads/GMPLibrary/app/src/main/AndroidManifest.xml:22:25-66
+35
+36                <category android:name="android.intent.category.LAUNCHER" />
+36-->/Users/gmp/Downloads/GMPLibrary/app/src/main/AndroidManifest.xml:24:17-77
+36-->/Users/gmp/Downloads/GMPLibrary/app/src/main/AndroidManifest.xml:24:27-74
+37            </intent-filter>
+38        </activity>
+39
+40        <service
+40-->/Users/gmp/Downloads/GMPLibrary/app/src/main/AndroidManifest.xml:27:9-95
+41            android:name="com.gmp.forwardble.BluetoothLeService"
+41-->/Users/gmp/Downloads/GMPLibrary/app/src/main/AndroidManifest.xml:27:18-70
+42            android:enabled="true" />
+42-->/Users/gmp/Downloads/GMPLibrary/app/src/main/AndroidManifest.xml:27:71-93
+43    </application>
+44
+45</manifest>

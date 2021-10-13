@@ -1,12 +1,12 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/gmp/Documents/POC_SDK/app/src/main/AndroidManifest.xml:2:1-21:12
-INJECTED from /Users/gmp/Documents/POC_SDK/app/src/main/AndroidManifest.xml:2:1-21:12
-INJECTED from /Users/gmp/Documents/POC_SDK/app/src/main/AndroidManifest.xml:2:1-21:12
-INJECTED from /Users/gmp/Documents/POC_SDK/app/src/main/AndroidManifest.xml:2:1-21:12
+ADDED from /Users/gmp/Downloads/GMPLibrary/app/src/main/AndroidManifest.xml:2:1-31:12
+INJECTED from /Users/gmp/Downloads/GMPLibrary/app/src/main/AndroidManifest.xml:2:1-31:12
+INJECTED from /Users/gmp/Downloads/GMPLibrary/app/src/main/AndroidManifest.xml:2:1-31:12
+INJECTED from /Users/gmp/Downloads/GMPLibrary/app/src/main/AndroidManifest.xml:2:1-31:12
 MERGED from [androidx.databinding:databinding-adapters:4.2.2] /Users/gmp/.gradle/caches/transforms-2/files-2.1/3de57e190fe29e2fe153914ee1c75a04/databinding-adapters-4.2.2/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.databinding:databinding-runtime:4.2.2] /Users/gmp/.gradle/caches/transforms-2/files-2.1/838cb1b119875aad95b0d4fd3b6091c4/databinding-runtime-4.2.2/AndroidManifest.xml:17:1-22:12
-MERGED from [:customDialog] /Users/gmp/Documents/POC_SDK/customDialog/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
+MERGED from [:forwardBle] /Users/gmp/Downloads/GMPLibrary/forwardBle/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.core:core-ktx:1.6.0] /Users/gmp/.gradle/caches/transforms-2/files-2.1/143607dcd978c79d9a5943563222df7c/core-ktx-1.6.0/AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.android.material:material:1.4.0] /Users/gmp/.gradle/caches/transforms-2/files-2.1/6b0be00ecfbc85e7ede5906157c6a0f7/material-1.4.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.1] /Users/gmp/.gradle/caches/transforms-2/files-2.1/f96efcbd2d7ef5ece87924b3f4ff206e/constraintlayout-2.1.1/AndroidManifest.xml:2:1-11:12
@@ -44,25 +44,57 @@ MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/gmp/.gradle/caches
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/gmp/.gradle/caches/transforms-2/files-2.1/39dc8d3fae4f3dbad514b70e0beae310/localbroadcastmanager-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.print:print:1.0.0] /Users/gmp/.gradle/caches/transforms-2/files-2.1/7dfca04f409b233eb5dcb1a0a2adbbdd/print-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] /Users/gmp/.gradle/caches/transforms-2/files-2.1/3bbc0092d7fdfd34a463006b78478970/annotation-experimental-1.1.0/AndroidManifest.xml:17:1-24:12
-INJECTED from /Users/gmp/Documents/POC_SDK/app/src/main/AndroidManifest.xml:2:1-21:12
-INJECTED from /Users/gmp/Documents/POC_SDK/app/src/main/AndroidManifest.xml:2:1-21:12
-INJECTED from /Users/gmp/Documents/POC_SDK/app/src/main/AndroidManifest.xml:2:1-21:12
+INJECTED from /Users/gmp/Downloads/GMPLibrary/app/src/main/AndroidManifest.xml:2:1-31:12
+INJECTED from /Users/gmp/Downloads/GMPLibrary/app/src/main/AndroidManifest.xml:2:1-31:12
+INJECTED from /Users/gmp/Downloads/GMPLibrary/app/src/main/AndroidManifest.xml:2:1-31:12
 	package
-		ADDED from /Users/gmp/Documents/POC_SDK/app/src/main/AndroidManifest.xml:3:5-37
-		INJECTED from /Users/gmp/Documents/POC_SDK/app/src/main/AndroidManifest.xml
-		INJECTED from /Users/gmp/Documents/POC_SDK/app/src/main/AndroidManifest.xml
+		ADDED from /Users/gmp/Downloads/GMPLibrary/app/src/main/AndroidManifest.xml:3:5-33
+		INJECTED from /Users/gmp/Downloads/GMPLibrary/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/gmp/Downloads/GMPLibrary/app/src/main/AndroidManifest.xml
 	android:versionName
-		INJECTED from /Users/gmp/Documents/POC_SDK/app/src/main/AndroidManifest.xml
-		ADDED from /Users/gmp/Documents/POC_SDK/app/src/main/AndroidManifest.xml:2:1-21:12
-		INJECTED from /Users/gmp/Documents/POC_SDK/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/gmp/Downloads/GMPLibrary/app/src/main/AndroidManifest.xml
+		ADDED from /Users/gmp/Downloads/GMPLibrary/app/src/main/AndroidManifest.xml:2:1-31:12
+		INJECTED from /Users/gmp/Downloads/GMPLibrary/app/src/main/AndroidManifest.xml
 	android:versionCode
-		INJECTED from /Users/gmp/Documents/POC_SDK/app/src/main/AndroidManifest.xml
-		ADDED from /Users/gmp/Documents/POC_SDK/app/src/main/AndroidManifest.xml:2:1-21:12
-		INJECTED from /Users/gmp/Documents/POC_SDK/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/gmp/Downloads/GMPLibrary/app/src/main/AndroidManifest.xml
+		ADDED from /Users/gmp/Downloads/GMPLibrary/app/src/main/AndroidManifest.xml:2:1-31:12
+		INJECTED from /Users/gmp/Downloads/GMPLibrary/app/src/main/AndroidManifest.xml
 	xmlns:android
-		ADDED from /Users/gmp/Documents/POC_SDK/app/src/main/AndroidManifest.xml:2:11-69
+		ADDED from /Users/gmp/Downloads/GMPLibrary/app/src/main/AndroidManifest.xml:2:11-69
+uses-feature#android.hardware.bluetooth_le
+ADDED from /Users/gmp/Downloads/GMPLibrary/app/src/main/AndroidManifest.xml:5:5-89
+	android:required
+		ADDED from /Users/gmp/Downloads/GMPLibrary/app/src/main/AndroidManifest.xml:5:64-87
+	android:name
+		ADDED from /Users/gmp/Downloads/GMPLibrary/app/src/main/AndroidManifest.xml:5:19-63
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from /Users/gmp/Downloads/GMPLibrary/app/src/main/AndroidManifest.xml:6:5-79
+	android:name
+		ADDED from /Users/gmp/Downloads/GMPLibrary/app/src/main/AndroidManifest.xml:6:22-76
+uses-permission#android.permission.ACCESS_COARSE_LOCATION
+ADDED from /Users/gmp/Downloads/GMPLibrary/app/src/main/AndroidManifest.xml:7:5-81
+	android:name
+		ADDED from /Users/gmp/Downloads/GMPLibrary/app/src/main/AndroidManifest.xml:7:22-78
+uses-permission#android.permission.ACCESS_BACKGROUND_LOCATION
+ADDED from /Users/gmp/Downloads/GMPLibrary/app/src/main/AndroidManifest.xml:8:5-85
+	android:name
+		ADDED from /Users/gmp/Downloads/GMPLibrary/app/src/main/AndroidManifest.xml:8:22-82
+uses-permission#android.permission.BLUETOOTH
+ADDED from /Users/gmp/Downloads/GMPLibrary/app/src/main/AndroidManifest.xml:10:5-67
+	android:name
+		ADDED from /Users/gmp/Downloads/GMPLibrary/app/src/main/AndroidManifest.xml:10:22-65
+uses-permission#android.permission.BLUETOOTH_ADMIN
+ADDED from /Users/gmp/Downloads/GMPLibrary/app/src/main/AndroidManifest.xml:11:5-73
+MERGED from [:forwardBle] /Users/gmp/Downloads/GMPLibrary/forwardBle/build/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-74
+MERGED from [:forwardBle] /Users/gmp/Downloads/GMPLibrary/forwardBle/build/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-74
+	android:name
+		ADDED from /Users/gmp/Downloads/GMPLibrary/app/src/main/AndroidManifest.xml:11:22-71
+uses-permission#android.permission.Bluetooth.android.hardware.bluetooth_le
+ADDED from /Users/gmp/Downloads/GMPLibrary/app/src/main/AndroidManifest.xml:12:5-97
+	android:name
+		ADDED from /Users/gmp/Downloads/GMPLibrary/app/src/main/AndroidManifest.xml:12:22-95
 application
-ADDED from /Users/gmp/Documents/POC_SDK/app/src/main/AndroidManifest.xml:5:5-19:19
+ADDED from /Users/gmp/Downloads/GMPLibrary/app/src/main/AndroidManifest.xml:13:5-29:19
 MERGED from [com.google.android.material:material:1.4.0] /Users/gmp/.gradle/caches/transforms-2/files-2.1/6b0be00ecfbc85e7ede5906157c6a0f7/material-1.4.0/AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.4.0] /Users/gmp/.gradle/caches/transforms-2/files-2.1/6b0be00ecfbc85e7ede5906157c6a0f7/material-1.4.0/AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.1] /Users/gmp/.gradle/caches/transforms-2/files-2.1/f96efcbd2d7ef5ece87924b3f4ff206e/constraintlayout-2.1.1/AndroidManifest.xml:9:5-20
@@ -74,41 +106,47 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/gmp/
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.6.0] /Users/gmp/.gradle/caches/transforms-2/files-2.1/3b4b2ff73537da458ffce892e09dd840/core-1.6.0/AndroidManifest.xml:24:18-86
 	android:supportsRtl
-		ADDED from /Users/gmp/Documents/POC_SDK/app/src/main/AndroidManifest.xml:10:9-35
+		ADDED from /Users/gmp/Downloads/GMPLibrary/app/src/main/AndroidManifest.xml:18:9-35
 	android:label
-		ADDED from /Users/gmp/Documents/POC_SDK/app/src/main/AndroidManifest.xml:8:9-41
+		ADDED from /Users/gmp/Downloads/GMPLibrary/app/src/main/AndroidManifest.xml:16:9-41
 	android:roundIcon
-		ADDED from /Users/gmp/Documents/POC_SDK/app/src/main/AndroidManifest.xml:9:9-54
+		ADDED from /Users/gmp/Downloads/GMPLibrary/app/src/main/AndroidManifest.xml:17:9-54
 	android:icon
-		ADDED from /Users/gmp/Documents/POC_SDK/app/src/main/AndroidManifest.xml:7:9-43
+		ADDED from /Users/gmp/Downloads/GMPLibrary/app/src/main/AndroidManifest.xml:15:9-43
 	android:allowBackup
-		ADDED from /Users/gmp/Documents/POC_SDK/app/src/main/AndroidManifest.xml:6:9-35
+		ADDED from /Users/gmp/Downloads/GMPLibrary/app/src/main/AndroidManifest.xml:14:9-35
 	android:theme
-		ADDED from /Users/gmp/Documents/POC_SDK/app/src/main/AndroidManifest.xml:11:9-48
-activity#com.example.androidsdk.MainActivity
-ADDED from /Users/gmp/Documents/POC_SDK/app/src/main/AndroidManifest.xml:12:9-18:20
+		ADDED from /Users/gmp/Downloads/GMPLibrary/app/src/main/AndroidManifest.xml:19:9-48
+activity#com.gmp.gmplibrary.MainActivity
+ADDED from /Users/gmp/Downloads/GMPLibrary/app/src/main/AndroidManifest.xml:20:9-26:20
 	android:name
-		ADDED from /Users/gmp/Documents/POC_SDK/app/src/main/AndroidManifest.xml:12:19-47
+		ADDED from /Users/gmp/Downloads/GMPLibrary/app/src/main/AndroidManifest.xml:20:19-47
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /Users/gmp/Documents/POC_SDK/app/src/main/AndroidManifest.xml:13:13-17:29
+ADDED from /Users/gmp/Downloads/GMPLibrary/app/src/main/AndroidManifest.xml:21:13-25:29
 action#android.intent.action.MAIN
-ADDED from /Users/gmp/Documents/POC_SDK/app/src/main/AndroidManifest.xml:14:17-69
+ADDED from /Users/gmp/Downloads/GMPLibrary/app/src/main/AndroidManifest.xml:22:17-69
 	android:name
-		ADDED from /Users/gmp/Documents/POC_SDK/app/src/main/AndroidManifest.xml:14:25-66
+		ADDED from /Users/gmp/Downloads/GMPLibrary/app/src/main/AndroidManifest.xml:22:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /Users/gmp/Documents/POC_SDK/app/src/main/AndroidManifest.xml:16:17-77
+ADDED from /Users/gmp/Downloads/GMPLibrary/app/src/main/AndroidManifest.xml:24:17-77
 	android:name
-		ADDED from /Users/gmp/Documents/POC_SDK/app/src/main/AndroidManifest.xml:16:27-74
+		ADDED from /Users/gmp/Downloads/GMPLibrary/app/src/main/AndroidManifest.xml:24:27-74
+service#com.gmp.forwardble.BluetoothLeService
+ADDED from /Users/gmp/Downloads/GMPLibrary/app/src/main/AndroidManifest.xml:27:9-95
+	android:enabled
+		ADDED from /Users/gmp/Downloads/GMPLibrary/app/src/main/AndroidManifest.xml:27:71-93
+	android:name
+		ADDED from /Users/gmp/Downloads/GMPLibrary/app/src/main/AndroidManifest.xml:27:18-70
 uses-sdk
-INJECTED from /Users/gmp/Documents/POC_SDK/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from /Users/gmp/Documents/POC_SDK/app/src/main/AndroidManifest.xml
-INJECTED from /Users/gmp/Documents/POC_SDK/app/src/main/AndroidManifest.xml
+INJECTED from /Users/gmp/Downloads/GMPLibrary/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/gmp/Downloads/GMPLibrary/app/src/main/AndroidManifest.xml
+INJECTED from /Users/gmp/Downloads/GMPLibrary/app/src/main/AndroidManifest.xml
 MERGED from [androidx.databinding:databinding-adapters:4.2.2] /Users/gmp/.gradle/caches/transforms-2/files-2.1/3de57e190fe29e2fe153914ee1c75a04/databinding-adapters-4.2.2/AndroidManifest.xml:20:5-44
 MERGED from [androidx.databinding:databinding-adapters:4.2.2] /Users/gmp/.gradle/caches/transforms-2/files-2.1/3de57e190fe29e2fe153914ee1c75a04/databinding-adapters-4.2.2/AndroidManifest.xml:20:5-44
 MERGED from [androidx.databinding:databinding-runtime:4.2.2] /Users/gmp/.gradle/caches/transforms-2/files-2.1/838cb1b119875aad95b0d4fd3b6091c4/databinding-runtime-4.2.2/AndroidManifest.xml:20:5-44
 MERGED from [androidx.databinding:databinding-runtime:4.2.2] /Users/gmp/.gradle/caches/transforms-2/files-2.1/838cb1b119875aad95b0d4fd3b6091c4/databinding-runtime-4.2.2/AndroidManifest.xml:20:5-44
-MERGED from [:customDialog] /Users/gmp/Documents/POC_SDK/customDialog/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
-MERGED from [:customDialog] /Users/gmp/Documents/POC_SDK/customDialog/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:forwardBle] /Users/gmp/Downloads/GMPLibrary/forwardBle/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:forwardBle] /Users/gmp/Downloads/GMPLibrary/forwardBle/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.core:core-ktx:1.6.0] /Users/gmp/.gradle/caches/transforms-2/files-2.1/143607dcd978c79d9a5943563222df7c/core-ktx-1.6.0/AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.core:core-ktx:1.6.0] /Users/gmp/.gradle/caches/transforms-2/files-2.1/143607dcd978c79d9a5943563222df7c/core-ktx-1.6.0/AndroidManifest.xml:5:5-7:41
 MERGED from [com.google.android.material:material:1.4.0] /Users/gmp/.gradle/caches/transforms-2/files-2.1/6b0be00ecfbc85e7ede5906157c6a0f7/material-1.4.0/AndroidManifest.xml:20:5-44
@@ -183,13 +221,13 @@ MERGED from [androidx.print:print:1.0.0] /Users/gmp/.gradle/caches/transforms-2/
 MERGED from [androidx.print:print:1.0.0] /Users/gmp/.gradle/caches/transforms-2/files-2.1/7dfca04f409b233eb5dcb1a0a2adbbdd/print-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] /Users/gmp/.gradle/caches/transforms-2/files-2.1/3bbc0092d7fdfd34a463006b78478970/annotation-experimental-1.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] /Users/gmp/.gradle/caches/transforms-2/files-2.1/3bbc0092d7fdfd34a463006b78478970/annotation-experimental-1.1.0/AndroidManifest.xml:20:5-22:41
-INJECTED from /Users/gmp/Documents/POC_SDK/app/src/main/AndroidManifest.xml
-INJECTED from /Users/gmp/Documents/POC_SDK/app/src/main/AndroidManifest.xml
+INJECTED from /Users/gmp/Downloads/GMPLibrary/app/src/main/AndroidManifest.xml
+INJECTED from /Users/gmp/Downloads/GMPLibrary/app/src/main/AndroidManifest.xml
 	android:targetSdkVersion
-		INJECTED from /Users/gmp/Documents/POC_SDK/app/src/main/AndroidManifest.xml
-		ADDED from /Users/gmp/Documents/POC_SDK/app/src/main/AndroidManifest.xml
-		INJECTED from /Users/gmp/Documents/POC_SDK/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/gmp/Downloads/GMPLibrary/app/src/main/AndroidManifest.xml
+		ADDED from /Users/gmp/Downloads/GMPLibrary/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/gmp/Downloads/GMPLibrary/app/src/main/AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from /Users/gmp/Documents/POC_SDK/app/src/main/AndroidManifest.xml
-		ADDED from /Users/gmp/Documents/POC_SDK/app/src/main/AndroidManifest.xml
-		INJECTED from /Users/gmp/Documents/POC_SDK/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/gmp/Downloads/GMPLibrary/app/src/main/AndroidManifest.xml
+		ADDED from /Users/gmp/Downloads/GMPLibrary/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/gmp/Downloads/GMPLibrary/app/src/main/AndroidManifest.xml

@@ -1,6 +1,8 @@
-com/example/androidsdk/databinding/ActivityMainBinding.java
- com.example.androidsdk.databinding.ActivityMainBinding
-com/example/androidsdk/DataBindingTriggerClass.java
- com.example.androidsdk.DataBindingTriggerClass
-com/example/androidsdk/BuildConfig.java
- com.example.androidsdk.BuildConfig
+com/gmp/gmplibrary/databinding/ActivityMainBinding.java
+ com.gmp.gmplibrary.databinding.ActivityMainBinding
+com/gmp/gmplibrary/BuildConfig.java
+ com.gmp.gmplibrary.BuildConfig
+com/gmp/gmplibrary/databinding/DeviceItemBinding.java
+ com.gmp.gmplibrary.databinding.DeviceItemBinding
+com/gmp/gmplibrary/DataBindingTriggerClass.java
+ com.gmp.gmplibrary.DataBindingTriggerClass

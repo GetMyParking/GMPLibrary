@@ -1,6 +1,10 @@
 [
     {
-        "merged": "/Users/gmp/Documents/POC_SDK/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_main.xml",
-        "source": "/Users/gmp/Documents/POC_SDK/app/src/main/res/layout/activity_main.xml"
+        "merged": "/Users/gmp/Downloads/GMPLibrary/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_main.xml",
+        "source": "/Users/gmp/Downloads/GMPLibrary/app/src/main/res/layout/activity_main.xml"
+    },
+    {
+        "merged": "/Users/gmp/Downloads/GMPLibrary/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/device_item.xml",
+        "source": "/Users/gmp/Downloads/GMPLibrary/app/src/main/res/layout/device_item.xml"
     }
 ]

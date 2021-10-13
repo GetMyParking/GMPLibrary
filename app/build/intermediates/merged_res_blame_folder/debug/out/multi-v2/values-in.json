@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/gmp/Documents/POC_SDK/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-in/values-in.xml",
+            "outputFile": "/Users/gmp/Downloads/GMPLibrary/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-in/values-in.xml",
             "map": [
                 {
                     "source": "/Users/gmp/.gradle/caches/transforms-2/files-2.1/3b4b2ff73537da458ffce892e09dd840/core-1.6.0/res/values-in/values-in.xml",
