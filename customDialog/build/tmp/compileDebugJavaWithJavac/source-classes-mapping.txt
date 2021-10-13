@@ -1,0 +1,2 @@
+com/example/customdialog/BuildConfig.java
+ com.example.customdialog.BuildConfig

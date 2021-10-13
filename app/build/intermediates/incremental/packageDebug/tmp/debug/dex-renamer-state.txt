@@ -1,0 +1,4 @@
+#Thu Oct 07 10:58:12 IST 2021
+base.0=/Users/gmp/Documents/POC_SDK/app/build/intermediates/dex/debug/mergeDexDebug/classes.dex
+renamed.0=classes.dex
+path.0=classes.dex
