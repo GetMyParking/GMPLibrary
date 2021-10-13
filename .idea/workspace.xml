@@ -10,8 +10,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9e01fc54-88e7-4b6d-a4a9-d81232ade699" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gradle/6.7.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +59,7 @@
       </method>
     </configuration>
     <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
-      <module name="AndroidSdk.app" />
+      <module name="gmplibrary.app" />
       <option name="DEPLOY" value="true" />
       <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
       <option name="DEPLOY_AS_INSTANT" value="false" />
@@ -136,10 +137,10 @@
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="482" y="171" key="RollbackChangesDialog/0.23.1440.877@0.23.1440.877" timestamp="1634115642836" />
-    <state x="421" y="216" width="781" height="490" key="find.popup" timestamp="1634119660717">
+    <state x="421" y="216" width="781" height="490" key="find.popup" timestamp="1634126008210">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state x="421" y="216" width="781" height="490" key="find.popup/0.23.1440.877@0.23.1440.877" timestamp="1634119660717" />
+    <state x="421" y="216" width="781" height="490" key="find.popup/0.23.1440.877@0.23.1440.877" timestamp="1634126008210" />
     <state x="490" y="357" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1634114823438">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
@@ -148,9 +149,9 @@
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="416" y="114" key="psd.add.module.dependency.panel.dimension/0.23.1440.877@0.23.1440.877" timestamp="1634115200602" />
-    <state x="385" y="213" width="670" height="676" key="search.everywhere.popup" timestamp="1634115693595">
+    <state x="385" y="213" width="670" height="676" key="search.everywhere.popup" timestamp="1634124091184">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state x="385" y="213" width="670" height="676" key="search.everywhere.popup/0.23.1440.877@0.23.1440.877" timestamp="1634115693595" />
+    <state x="385" y="213" width="670" height="676" key="search.everywhere.popup/0.23.1440.877@0.23.1440.877" timestamp="1634124091184" />
   </component>
 </project>

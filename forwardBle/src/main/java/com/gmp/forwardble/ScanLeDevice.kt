@@ -16,6 +16,7 @@ object ScanLeDevice {
     private const val SCAN_PERIOD: Long = 10000
     private var mScanning = false
     private var mHandler: Handler? = null
+    @JvmStatic
     fun init(mContext: Context) {
         mHandler = Handler(Looper.myLooper()!!)
 
@@ -27,10 +28,13 @@ object ScanLeDevice {
         mBluetoothAdapter = bluetoothManager.adapter
         bluetoothLeScanner = mBluetoothAdapter?.bluetoothLeScanner
     }
+    @JvmStatic
     fun getBluetoothAdapter():BluetoothAdapter?
     {
         return mBluetoothAdapter
     }
+
+    @JvmStatic
      fun startScanLeDevice(scanCallback: ScanCallback) {
 
             // Stops scanning after a pre-defined scan period.
@@ -42,6 +46,8 @@ object ScanLeDevice {
             bluetoothLeScanner?.startScan(scanCallback)
 
     }
+
+    @JvmStatic
     fun stopScanLeDeviceg(scanCallback: ScanCallback)
     {
         bluetoothLeScanner?.stopScan(scanCallback)
