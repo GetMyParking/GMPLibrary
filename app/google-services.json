@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "462139353672",
+    "project_id": "gmplibrary-f2fd7",
+    "storage_bucket": "gmplibrary-f2fd7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:462139353672:android:900bc2b24f90249373067d",
+        "android_client_info": {
+          "package_name": "com.gmp.gmplibrary"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "462139353672-oqvblqlgs1n2l7khcgmj50bie2i7op16.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCt1IGhmSsrrFm0C2wT84KGYboBVRwkdB4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "462139353672-oqvblqlgs1n2l7khcgmj50bie2i7op16.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
