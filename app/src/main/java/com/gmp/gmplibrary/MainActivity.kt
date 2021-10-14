@@ -20,6 +20,8 @@ import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.gmp.forwardble.BluetoothLeService
+import com.gmp.forwardble.ScanLeDevice
 
 import com.gmp.gmplibrary.databinding.ActivityMainBinding
 
