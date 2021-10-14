@@ -55,9 +55,12 @@ class MainActivity : AppCompatActivity(), ServiceConnection, OnItemClickListener
                 }
             }
         }
-        locationPermissionRequest.launch(arrayOf(
-            Manifest.permission.ACCESS_FINE_LOCATION,
-            Manifest.permission.ACCESS_COARSE_LOCATION))
+        locationPermissionRequest.launch(
+            arrayOf(
+                Manifest.permission.ACCESS_FINE_LOCATION,
+                Manifest.permission.ACCESS_COARSE_LOCATION
+            )
+        )
     }
 
 
@@ -156,7 +159,7 @@ class MainActivity : AppCompatActivity(), ServiceConnection, OnItemClickListener
         mBluetoothLeService = null
     }
 
-    fun connectDevice() {
+    private fun connectDevice() {
         if (mBluetoothLeService?.initialize() == false) {
             Log.e(
                 TAG,

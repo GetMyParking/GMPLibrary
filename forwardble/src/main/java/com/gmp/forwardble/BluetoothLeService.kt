@@ -10,7 +10,7 @@ import android.os.IBinder
 import android.util.Log
 import java.util.*
 
-public class BluetoothLeService : Service() {
+class BluetoothLeService : Service() {
     private val TAG: String =
         BluetoothLeService::class.java.simpleName
 
@@ -162,7 +162,7 @@ public class BluetoothLeService : Service() {
 
     }
 
-     fun getWriteCharacterStic(): BluetoothGattCharacteristic? {
+    fun getWriteCharacterStic(): BluetoothGattCharacteristic? {
         var mCharacterstic: BluetoothGattCharacteristic? = null
         val gattServices = getSupportedGattServices() ?: return mCharacterstic
         // Loops through available GATT Services.
@@ -184,8 +184,8 @@ public class BluetoothLeService : Service() {
         return mCharacterstic
 
     }
-    fun discoverServices()
-    {
+
+    fun discoverServices() {
         mBluetoothGatt?.discoverServices()
 
     }
