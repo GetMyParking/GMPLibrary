@@ -1,0 +1,2 @@
+com/gmp/forwardble/BuildConfig.java
+ com.gmp.forwardble.BuildConfig
