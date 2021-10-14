@@ -9,7 +9,7 @@ import android.content.ComponentName
 import android.content.ContentValues.TAG
 import android.content.Intent
 import android.content.ServiceConnection
-import android.os.Buildgit
+import android.os.Build
 import android.os.Bundle
 import android.os.IBinder
 import android.util.Log
@@ -20,8 +20,7 @@ import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.gmp.forwardble.BluetoothLeService
-import com.gmp.forwardble.ScanLeDevice
+
 import com.gmp.gmplibrary.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity(), ServiceConnection, OnItemClickListener {
