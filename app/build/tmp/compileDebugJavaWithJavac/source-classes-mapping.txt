@@ -1,8 +1,0 @@
-com/gmp/gmplibrary/databinding/ActivityMainBinding.java
- com.gmp.gmplibrary.databinding.ActivityMainBinding
-com/gmp/gmplibrary/BuildConfig.java
- com.gmp.gmplibrary.BuildConfig
-com/gmp/gmplibrary/databinding/DeviceItemBinding.java
- com.gmp.gmplibrary.databinding.DeviceItemBinding
-com/gmp/gmplibrary/DataBindingTriggerClass.java
- com.gmp.gmplibrary.DataBindingTriggerClass
