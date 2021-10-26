@@ -4,17 +4,16 @@ import android.bluetooth.BluetoothAdapter
 import android.bluetooth.BluetoothManager
 import android.bluetooth.le.BluetoothLeScanner
 import android.bluetooth.le.ScanCallback
+import android.bluetooth.le.ScanFilter
+import android.bluetooth.le.ScanSettings
 import android.content.Context
 import android.os.Handler
 import android.os.Looper
 
+
 object ScanLeDevice {
     private var mBluetoothAdapter: BluetoothAdapter? = null
     private var bluetoothLeScanner: BluetoothLeScanner? = null
-    private const val REQUEST_ENABLE_BT = 1
-
-    // Stops scanning after 10 seconds.
-    private const val SCAN_PERIOD: Long = 10000
     private var mScanning = false
     private var mHandler: Handler? = null
 
@@ -38,23 +37,32 @@ object ScanLeDevice {
 
     //Start Scanning Le Devices
     @JvmStatic
-    fun startScanLeDevice(scanCallback: ScanCallback) {
+    fun startScanLeDevice(scanCallback: ScanCallback, scanPeriod: Long) {
 
-        // Stops scanning after a pre-defined scan period.
+        // Stop scanning after a pre-defined scan period.
         mHandler?.postDelayed(Runnable {
             mScanning = false
             bluetoothLeScanner?.stopScan(scanCallback)
-        }, SCAN_PERIOD)
+        }, scanPeriod)
         mScanning = true
-        bluetoothLeScanner?.startScan(scanCallback)
+//scan with filter (scan result will be in batch)
+        val settings = ScanSettings.Builder()
+            .setScanMode(ScanSettings.SCAN_MODE_LOW_LATENCY)
+            .setReportDelay(1000)
+            .build()
+
+        val filters = mutableListOf<ScanFilter>()
+        bluetoothLeScanner?.startScan(filters, settings, scanCallback)
+
+        //scan without filter
+//        bluetoothLeScanner?.startScan(scanCallback)
 
     }
 
-    //Stope Scanning Le Devices
+    // Stop Scanning Le Devices
     @JvmStatic
-    fun stopScanLeDeviceg(scanCallback: ScanCallback) {
+    fun stopScanLeDevice(scanCallback: ScanCallback) {
         bluetoothLeScanner?.stopScan(scanCallback)
-
     }
 
 }

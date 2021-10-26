@@ -34,6 +34,8 @@ class MainActivity : AppCompatActivity(), ServiceConnection, OnItemClickListener
     val LOCATION_PERMISSION_REQUEST_CODE = 2
     private val REQUEST_ENABLE_BT = 1
 
+    // Stops scanning after 10 seconds.
+    private  val SCAN_PERIOD: Long = 10000
     @RequiresApi(Build.VERSION_CODES.N)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -79,7 +81,7 @@ class MainActivity : AppCompatActivity(), ServiceConnection, OnItemClickListener
         // User chose not to enable Bluetooth.
         if (requestCode == REQUEST_ENABLE_BT && resultCode == RESULT_OK) {
             ScanLeDevice.init(this)
-            ScanLeDevice.startScanLeDevice(mLeScanCallbackNew)
+            ScanLeDevice.startScanLeDevice(mLeScanCallbackNew,SCAN_PERIOD)
 
         } else if (requestCode == LOCATION_PERMISSION_REQUEST_CODE && resultCode == RESULT_OK) {
             ScanLeDevice.init(this)
@@ -92,7 +94,7 @@ class MainActivity : AppCompatActivity(), ServiceConnection, OnItemClickListener
                     REQUEST_ENABLE_BT
                 )
             } else {
-                ScanLeDevice.startScanLeDevice(mLeScanCallbackNew)
+                ScanLeDevice.startScanLeDevice(mLeScanCallbackNew,SCAN_PERIOD)
 
             }
         }
@@ -109,7 +111,7 @@ class MainActivity : AppCompatActivity(), ServiceConnection, OnItemClickListener
                 REQUEST_ENABLE_BT
             )
         } else {
-            ScanLeDevice.startScanLeDevice(mLeScanCallbackNew)
+            ScanLeDevice.startScanLeDevice(mLeScanCallbackNew,SCAN_PERIOD)
 
         }
     }
@@ -130,9 +132,9 @@ class MainActivity : AppCompatActivity(), ServiceConnection, OnItemClickListener
     object : ScanCallback() {
         override fun onScanResult(callbackType: Int, result: ScanResult) {
             super.onScanResult(callbackType, result)
-            adapter.addDevice(result.device)
-            adapter.notifyDataSetChanged()
-            binder.progressBar.visibility = View.GONE
+//            adapter.addDevice(result.device)
+//            adapter.notifyDataSetChanged()
+//            binder.progressBar.visibility = View.GONE
 //            if (bluetoothDevice == null) {
 //                if (result.device.address.equals("wefrgr", true))
 //                    bluetoothDevice = result.device
@@ -142,6 +144,11 @@ class MainActivity : AppCompatActivity(), ServiceConnection, OnItemClickListener
 
         override fun onBatchScanResults(results: List<ScanResult>) {
             super.onBatchScanResults(results)
+            binder.progressBar.visibility = View.GONE
+            adapter.addAllDevices(results)
+            adapter.notifyDataSetChanged()
+
+
         }
 
         override fun onScanFailed(errorCode: Int) {
@@ -167,7 +174,7 @@ class MainActivity : AppCompatActivity(), ServiceConnection, OnItemClickListener
             )
             finish()
         }
-        ScanLeDevice.stopScanLeDeviceg(mLeScanCallbackNew)
+        ScanLeDevice.stopScanLeDevice(mLeScanCallbackNew)
         mBluetoothLeService?.disconnect()
         // Automatically connects to the device upon successful start-up initialization.
         // Automatically connects to the device upon successful start-up initialization.
@@ -295,6 +302,6 @@ class MainActivity : AppCompatActivity(), ServiceConnection, OnItemClickListener
 
         }
 
-        ScanLeDevice.startScanLeDevice(mLeScanCallbackNew)
+        ScanLeDevice.startScanLeDevice(mLeScanCallbackNew,SCAN_PERIOD)
     }
 }
