@@ -22,7 +22,7 @@ class BluetoothLeService : Service() {
     private val mBinder: IBinder =
         LocalBinder()
 
-    override fun onBind(intent: Intent?): IBinder? {
+    override fun onBind(intent: Intent?): IBinder {
         return mBinder
     }
 
@@ -103,7 +103,7 @@ class BluetoothLeService : Service() {
         // We want to directly connect to the device, so we are setting the autoConnect
         // parameter to false.
         mBluetoothGatt =
-            device.connectGatt(this, true, mGattCallback, BluetoothDevice.TRANSPORT_LE)
+            device.connectGatt(this, false, mGattCallback, BluetoothDevice.TRANSPORT_LE)
         Log.d(TAG, "Trying to create a new connection.")
         mBluetoothDeviceAddress = address
         return true
@@ -119,17 +119,18 @@ class BluetoothLeService : Service() {
         return if (mBluetoothGatt == null) null else mBluetoothGatt?.services
     }
 
-    fun writeData(msg: String, characteristic: BluetoothGattCharacteristic) {
+    fun writeData(msg: String, characteristic: BluetoothGattCharacteristic):Boolean {
 
-        try {
+        return try {
             characteristic.value = msg.toByteArray()
             val status = mBluetoothGatt?.writeCharacteristic(characteristic)
-            Log.d(TAG, "status=$status")
+            status == true
         } catch (e: Exception) {
             Log.e(
                 "LOG_TAG",
                 "BluetoothLowEnergy.send: Failed to convert message string to byte array"
             )
+            false
         }
     }
 
@@ -178,7 +179,7 @@ class BluetoothLeService : Service() {
                 }
             }
             if (mCharacterstic != null) {
-                break;
+                break
             }
         }
         return mCharacterstic
