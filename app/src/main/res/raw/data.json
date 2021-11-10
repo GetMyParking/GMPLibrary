@@ -1,0 +1,54 @@
+{
+  "availableTranslations":[
+    "en",
+    "pt-BR"
+  ],
+  "data":[
+    {
+      "key":"app_name",
+      "translations":[
+        {
+          "iso":"en",
+          "value":"GarageInn"
+        },
+        {
+          "iso":"pt-BR",
+          "value":"Flow GarageInn."
+        }
+      ]
+    },
+    {
+      "key": "abc",
+      "translations": [
+
+        {
+          "iso":"en",
+          "value":"<![CDATA[<font color='%1$s'>Already registered? <u><\/font><font color='%2$s'>Log In<\/font><\/u>]]>"
+
+        }
+      ]
+    },
+    {
+      "key": "qa",
+      "translations": [
+        {
+          "iso":"en",
+          "value":"Version Name : %s"
+        }
+      ]
+    },
+    {
+      "key":"where_do_you_want_to_park",
+      "translations":[
+        {
+          "iso":"en",
+          "value":"Where do you want to park?"
+        },
+        {
+          "iso":"pt-BR",
+          "value":"Onde voc\u00ea quer estacionar?"
+        }
+      ]
+    }
+  ]
+}
