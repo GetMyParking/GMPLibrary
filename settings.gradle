@@ -1,4 +1,4 @@
 rootProject.name = "GMP Library"
 include ':app'
 include ':forwardble'
-include ':gmpLokalise'
+include ':gmpLocalise'
