@@ -22,12 +22,10 @@ import androidx.core.app.ActivityCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.gmp.forwardble.BluetoothLeService
 import com.gmp.forwardble.ScanLeDevice
+
 import com.gmp.gmplibrary.databinding.ActivityMainBinding
-import com.gmp.gmplokalise.GMPLokaliseSdk
-import com.gmp.gmplokalise.helper.GmpLokaliseCallBack
 
-
-class MainActivity : AppCompatActivity(), ServiceConnection, OnItemClickListener,GmpLokaliseCallBack {
+class MainActivity : AppCompatActivity(), ServiceConnection, OnItemClickListener {
     private var bluetoothDevice: BluetoothDevice? = null
     private var mBluetoothLeService: BluetoothLeService? = null
     lateinit var binder: ActivityMainBinding
@@ -36,21 +34,12 @@ class MainActivity : AppCompatActivity(), ServiceConnection, OnItemClickListener
     val LOCATION_PERMISSION_REQUEST_CODE = 2
     private val REQUEST_ENABLE_BT = 1
 
-
     // Stops scanning after 10 seconds.
-    private  val SCAN_PERIOD: Long = 10000
+    private val SCAN_PERIOD: Long = 10000
     @RequiresApi(Build.VERSION_CODES.N)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        try {
-            GMPLokaliseSdk.initialize("",12,this,this)
-
-
             binder = ActivityMainBinding.inflate(LayoutInflater.from(this))
-        }catch (e:Exception)
-        {
-            e.printStackTrace()
-        }
         init()
         setContentView(binder.root)
         val locationPermissionRequest = registerForActivityResult(
@@ -92,7 +81,7 @@ class MainActivity : AppCompatActivity(), ServiceConnection, OnItemClickListener
         // User chose not to enable Bluetooth.
         if (requestCode == REQUEST_ENABLE_BT && resultCode == RESULT_OK) {
             ScanLeDevice.init(this)
-            ScanLeDevice.startScanLeDevice(mLeScanCallbackNew,SCAN_PERIOD)
+            ScanLeDevice.startScanLeDevice(mLeScanCallbackNew, SCAN_PERIOD)
 
         } else if (requestCode == LOCATION_PERMISSION_REQUEST_CODE && resultCode == RESULT_OK) {
             ScanLeDevice.init(this)
@@ -105,7 +94,7 @@ class MainActivity : AppCompatActivity(), ServiceConnection, OnItemClickListener
                     REQUEST_ENABLE_BT
                 )
             } else {
-                ScanLeDevice.startScanLeDevice(mLeScanCallbackNew,SCAN_PERIOD)
+                ScanLeDevice.startScanLeDevice(mLeScanCallbackNew, SCAN_PERIOD)
 
             }
         }
@@ -122,7 +111,7 @@ class MainActivity : AppCompatActivity(), ServiceConnection, OnItemClickListener
                 REQUEST_ENABLE_BT
             )
         } else {
-            ScanLeDevice.startScanLeDevice(mLeScanCallbackNew,SCAN_PERIOD)
+            ScanLeDevice.startScanLeDevice(mLeScanCallbackNew, SCAN_PERIOD)
 
         }
     }
@@ -313,26 +302,6 @@ class MainActivity : AppCompatActivity(), ServiceConnection, OnItemClickListener
 
         }
 
-        ScanLeDevice.startScanLeDevice(mLeScanCallbackNew,SCAN_PERIOD)
-    }
-
-    override fun onDBUpdateSuccess() {
-       val s= GMPLokaliseSdk.getString("app_name")
-        Log.d(TAG,"onDBUpdateSuccess")
-    }
-
-    override fun onDBUpdateFail(exception: java.lang.Exception) {
-        Log.d(TAG,"onDBUpdateFail")
-
-    }
-
-    override fun onFileReadSuccess() {
-        Log.d(TAG,"onFileReadSuccess")
-
-    }
-
-    override fun onFileReadFail(exception: java.lang.Exception) {
-        Log.d(TAG,"onFileReadFail")
-
+        ScanLeDevice.startScanLeDevice(mLeScanCallbackNew, SCAN_PERIOD)
     }
 }

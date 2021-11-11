@@ -6,7 +6,7 @@ import androidx.sqlite.db.SupportSQLiteDatabase
 import com.gmp.gmplokalise.model.LanguageEntity
 import com.gmp.gmplokalise.model.TranslationEntity
 
-@Database(entities = [TranslationEntity::class,LanguageEntity::class], version = 1)
+@Database(entities = [TranslationEntity::class, LanguageEntity::class], version = 1)
 @TypeConverters(Converters::class)
 abstract class GmpLokaliseDatabase : RoomDatabase() {
     abstract fun translationDao(): TranslationDao

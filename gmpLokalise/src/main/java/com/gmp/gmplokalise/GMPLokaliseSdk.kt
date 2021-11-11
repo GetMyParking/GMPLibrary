@@ -6,16 +6,19 @@ import android.util.Log
 import com.gmp.gmplokalise.database.GmpLokaliseDatabase
 import com.gmp.gmplokalise.helper.GmpLokaliseCallBack
 import com.gmp.gmplokalise.model.LanguageEntity
+import com.gmp.gmplokalise.model.TranslationResponse
 import com.gmp.gmplokalise.utils.ParserUtils
 import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.collect
+import java.lang.Exception
+import java.util.*
 
 
 object GMPLokaliseSdk {
     var scope = CoroutineScope(Job() + Dispatchers.IO)
     var parserUtils: ParserUtils? = null
     var sharedPreferences: SharedPreferences? = null
-    var oldVersion = 0
+    var lastCacheDate: Long = 0
     var defaultIso = "en"
     var dbInstance: GmpLokaliseDatabase? = null
     var values: List<String>? = null
@@ -26,49 +29,69 @@ object GMPLokaliseSdk {
     }
 
     @JvmStatic
-    fun initialize(
-        s3Url: String,
-        newVersion: Int,
-        mContext: Context,
-        mCallBack: GmpLokaliseCallBack
-    ) {
-        this.mCallBack = mCallBack
+    fun initialize(mContext: Context) {
         sharedPreferences = mContext.getSharedPreferences(
             "Gmp_Lokalise_Pref", Context.MODE_PRIVATE
         )
-        sharedPreferences?.getInt("version", 0)?.let {
-            oldVersion = it
+        dbInstance = GmpLokaliseDatabase.getInstance(mContext)
+
+    }
+
+    @JvmStatic
+    fun isTranslationUpdateAvailable(lastUpdateDate: Date): Boolean {
+
+        sharedPreferences?.getLong("updated_date", 0L)?.let {
+            lastCacheDate = it
         }
-        if (newVersion >= oldVersion) {
-            with(sharedPreferences?.edit()) {
-                this?.putInt("version", newVersion)
-                this?.apply()
-            }
-            scope.launch {
+        with(sharedPreferences?.edit()) {
+            this?.putLong("updated_date", lastUpdateDate.time)
+            this?.apply()
+        }
+        return if (lastCacheDate <= 0) {
+            true
+        } else {
+            lastUpdateDate.before(Date(lastCacheDate))
+        }
+    }
 
-                parserUtils?.parseData(mContext)?.collect {
-                    if (it != null) {
-                        val translationEntityList =
-                            parserUtils?.convertTranslationResponseToEntity(it.data)
-                        if (!translationEntityList.isNullOrEmpty()) {
-                            dbInstance = GmpLokaliseDatabase.getInstance(mContext)
-                            dbInstance?.clearAllTables()
+    @JvmStatic
+    fun updateTranslatuions(
+        s3Url: String,
+        mCallBack: GmpLokaliseCallBack
+    ) {
+        this.mCallBack = mCallBack
 
+
+        scope.launch {
+
+            parserUtils?.parseData(s3Url)?.collect {
+                if (it != null && it is TranslationResponse) {
+                    mCallBack.onFileReadSuccess()
+                    val translationEntityList =
+                        parserUtils?.convertTranslationResponseToEntity(it.data)
+                    if (!translationEntityList.isNullOrEmpty()) {
+                        dbInstance?.clearAllTables()
+                        parserUtils?.convertIsoIntoLanguageEntity(it.availableTranslations)
+                            ?.let { it1 ->
+                                dbInstance?.translationDao()
+                                    ?.insertIso(it1)
+                            }
 //                            GmpLokaliseDatabase.getInstance(mContext)?.translationDao()?.removeAll()
-                            dbInstance?.translationDao()
-                                ?.updateSequence()
-                            dbInstance?.translationDao()
-                                ?.insertTranslations(translationEntityList)
-                            parserUtils?.converIsoIntoLanguageEntity(it.availableTranslations)
-                                ?.let { it1 ->
-                                    dbInstance?.translationDao()
-                                        ?.insertIso(it1)
-                                }
+                        dbInstance?.translationDao()
+                            ?.updateSequence()
+                        dbInstance?.translationDao()
+                            ?.insertTranslations(translationEntityList)
 
-                        }
+                        mCallBack.onDBUpdateSuccess()
+
+                    } else {
+                        mCallBack.onDBUpdateFail()
                     }
+                } else if (it is Exception) {
+                    mCallBack.onFileReadFail(it)
                 }
             }
+
         }
     }
 
@@ -78,18 +101,6 @@ object GMPLokaliseSdk {
             this?.apply()
         }
     }
-
-//    fun getString(key: String) = CoroutineScope(Dispatchers.IO).async {
-//        var iso = defaultIso
-//        sharedPreferences?.getString("iso", defaultIso)?.let {
-//            iso = it
-//        }
-//        val values = dbInstance?.translationDao()
-//            ?.getString(key, iso)
-//        if (!values.isNullOrEmpty())
-//            return@async values[0]
-//        return@async ""
-//    }
 
     fun getString(key: String): String {
         var iso = defaultIso

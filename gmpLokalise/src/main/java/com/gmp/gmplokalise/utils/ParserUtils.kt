@@ -14,34 +14,32 @@ import java.net.URL
 class ParserUtils {
 
     fun parseData(
-        mContext: Context
-    ): kotlinx.coroutines.flow.Flow<TranslationResponse?> = flow {
-        try {
-//            val apiResponse =
-//                URL("https://mdn01.lokalise.co/bundles/73982483600e67de5e99c6.59319347/android/472812.json").readText()
+        url: String
+    ): kotlinx.coroutines.flow.Flow<Any?> = flow {
+        runCatching {
+            try {
+                val apiResponse =
+                    URL(url).readText()
 
-            val inputStream = mContext.resources.openRawResource(R.raw.data)
+                val gson = Gson()
 
-            val inputString = inputStream.bufferedReader().use { it.readText() }
-//            println(inputString)
-            val gson = Gson()
-//            val userArray: ArrayList<TranslationsResponse> =
-//                gson.fromJson(inputString, Array<TranslationsResponse>::class.java)
-//            translationList.postValue(Result.success(userArray))
+                val modelToReturn: TranslationResponse?
+                val reader = JsonReader(StringReader(apiResponse))
+                reader.isLenient = true
+                modelToReturn =
+                    gson.fromJson(
+                        reader,
+                        TranslationResponse::class.java
+                    )
+                reader.close()
+                emit(modelToReturn)
 
-            var modelToReturn: TranslationResponse?
-            val reader = JsonReader(StringReader(inputString))
-            reader.isLenient = true
-            modelToReturn =
-                gson.fromJson(
-                    reader,
-                    TranslationResponse::class.java
-                )
-            reader.close()
-            emit(modelToReturn)
+            } catch (e: Exception) {
+                emit(e)
+            }
+        }.onFailure {
+            emit(java.lang.Exception(it))
 
-        } catch (e: Exception) {
-            emit(null)
         }
     }.flowOn(Dispatchers.Default)
 
@@ -65,12 +63,11 @@ class ParserUtils {
         }
         return translationEntity
     }
-    fun converIsoIntoLanguageEntity(list: ArrayList<String>):ArrayList<LanguageEntity>
-    {
+
+    fun convertIsoIntoLanguageEntity(list: ArrayList<String>): ArrayList<LanguageEntity> {
         val languageEntity: ArrayList<LanguageEntity> = arrayListOf()
 
-        for (iso in list)
-        {
+        for (iso in list) {
             languageEntity.add(LanguageEntity(iso = iso))
         }
         return languageEntity
