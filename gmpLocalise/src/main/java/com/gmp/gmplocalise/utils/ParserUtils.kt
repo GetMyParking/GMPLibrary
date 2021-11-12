@@ -16,11 +16,8 @@ class ParserUtils {
     ): kotlinx.coroutines.flow.Flow<Any?> = flow {
         runCatching {
             try {
-                val apiResponse =
-                    URL(url).readText()
-
+                val apiResponse = URL(url).readText()
                 val gson = Gson()
-
                 val modelToReturn: TranslationResponse?
                 val reader = JsonReader(StringReader(apiResponse))
                 reader.isLenient = true
@@ -31,13 +28,11 @@ class ParserUtils {
                     )
                 reader.close()
                 emit(modelToReturn)
-
             } catch (e: Exception) {
                 emit(e)
             }
         }.onFailure {
             emit(java.lang.Exception(it))
-
         }
     }.flowOn(Dispatchers.Default)
 

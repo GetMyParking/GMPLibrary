@@ -93,6 +93,7 @@ object GMPLocaliseSdk {
         }
     }
 
+    @JvmStatic
     fun setLocality(iso: String) {
         with(sharedPreferences?.edit()) {
             this?.putString("iso", iso)
@@ -100,6 +101,7 @@ object GMPLocaliseSdk {
         }
     }
 
+    @JvmStatic
     fun getString(key: String): String {
         var iso = defaultIso
         sharedPreferences?.getString("iso", defaultIso)?.let {
@@ -117,6 +119,7 @@ object GMPLocaliseSdk {
 
     }
 
+    @JvmStatic
     fun getLocality(): String {
         var iso = defaultIso
         sharedPreferences?.getString("iso", defaultIso)?.let {
@@ -125,10 +128,12 @@ object GMPLocaliseSdk {
         return iso
     }
 
+    @JvmStatic
     fun setDefaultLocality(defaultIso: String) {
         this.defaultIso = defaultIso
     }
 
+    @JvmStatic
     fun getAvailableLanguages(): List<String>? {
         var languages: List<String>?
         runBlocking {
