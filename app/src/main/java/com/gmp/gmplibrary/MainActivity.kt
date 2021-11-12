@@ -35,11 +35,11 @@ class MainActivity : AppCompatActivity(), ServiceConnection, OnItemClickListener
     private val REQUEST_ENABLE_BT = 1
 
     // Stops scanning after 10 seconds.
-    private  val SCAN_PERIOD: Long = 10000
+    private val SCAN_PERIOD: Long = 10000
     @RequiresApi(Build.VERSION_CODES.N)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binder = ActivityMainBinding.inflate(LayoutInflater.from(this))
+            binder = ActivityMainBinding.inflate(LayoutInflater.from(this))
         init()
         setContentView(binder.root)
         val locationPermissionRequest = registerForActivityResult(
@@ -81,7 +81,7 @@ class MainActivity : AppCompatActivity(), ServiceConnection, OnItemClickListener
         // User chose not to enable Bluetooth.
         if (requestCode == REQUEST_ENABLE_BT && resultCode == RESULT_OK) {
             ScanLeDevice.init(this)
-            ScanLeDevice.startScanLeDevice(mLeScanCallbackNew,SCAN_PERIOD)
+            ScanLeDevice.startScanLeDevice(mLeScanCallbackNew, SCAN_PERIOD)
 
         } else if (requestCode == LOCATION_PERMISSION_REQUEST_CODE && resultCode == RESULT_OK) {
             ScanLeDevice.init(this)
@@ -94,7 +94,7 @@ class MainActivity : AppCompatActivity(), ServiceConnection, OnItemClickListener
                     REQUEST_ENABLE_BT
                 )
             } else {
-                ScanLeDevice.startScanLeDevice(mLeScanCallbackNew,SCAN_PERIOD)
+                ScanLeDevice.startScanLeDevice(mLeScanCallbackNew, SCAN_PERIOD)
 
             }
         }
@@ -111,7 +111,7 @@ class MainActivity : AppCompatActivity(), ServiceConnection, OnItemClickListener
                 REQUEST_ENABLE_BT
             )
         } else {
-            ScanLeDevice.startScanLeDevice(mLeScanCallbackNew,SCAN_PERIOD)
+            ScanLeDevice.startScanLeDevice(mLeScanCallbackNew, SCAN_PERIOD)
 
         }
     }
@@ -302,6 +302,6 @@ class MainActivity : AppCompatActivity(), ServiceConnection, OnItemClickListener
 
         }
 
-        ScanLeDevice.startScanLeDevice(mLeScanCallbackNew,SCAN_PERIOD)
+        ScanLeDevice.startScanLeDevice(mLeScanCallbackNew, SCAN_PERIOD)
     }
 }
