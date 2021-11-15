@@ -12,7 +12,7 @@ interface TranslationDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertTranslations(translationEntity: ArrayList<TranslationEntity>)
 
-    @Query("select value from translations where `key`=:key and iso=:iso")
+    @Query("select value from translations where `key`=:key and iso=:iso COLLATE NOCASE")
     suspend fun getString(key: String, iso: String): List<String>
 
     @Query("DELETE from translations")

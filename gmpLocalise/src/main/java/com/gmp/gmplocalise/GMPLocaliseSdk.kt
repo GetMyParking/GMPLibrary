@@ -2,13 +2,14 @@ package com.gmp.gmplocalise
 
 import android.content.Context
 import android.content.SharedPreferences
+import android.content.res.Resources
+import android.os.Build
 import com.gmp.gmplocalise.database.GmpLocaliseDatabase
 import com.gmp.gmplocalise.helper.GmpLocaliseCallBack
 import com.gmp.gmplocalise.model.TranslationResponse
 import com.gmp.gmplocalise.utils.ParserUtils
 import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.collect
-import java.lang.Exception
 import java.util.*
 
 
@@ -28,6 +29,7 @@ object GMPLocaliseSdk {
 
     @JvmStatic
     fun initialize(mContext: Context) {
+
         sharedPreferences = mContext.getSharedPreferences(
             "Gmp_Localise_Pref", Context.MODE_PRIVATE
         )
@@ -53,7 +55,7 @@ object GMPLocaliseSdk {
     }
 
     @JvmStatic
-    fun updateTranslatuions(
+    fun updateTranslations(
         s3Url: String,
         mCallBack: GmpLocaliseCallBack
     ) {
@@ -62,7 +64,7 @@ object GMPLocaliseSdk {
 
         scope.launch {
 
-            parserUtils?.parseData(s3Url)?.collect {
+            parserUtils?.parseData( s3Url)?.collect {
                 if (it != null && it is TranslationResponse) {
                     mCallBack.onFileReadSuccess()
                     val translationEntityList =
@@ -79,13 +81,15 @@ object GMPLocaliseSdk {
                             ?.updateSequence()
                         dbInstance?.translationDao()
                             ?.insertTranslations(translationEntityList)
-
+                        setLocality()
                         mCallBack.onDBUpdateSuccess()
 
                     } else {
+                        setLocality()
                         mCallBack.onDBUpdateFail()
                     }
                 } else if (it is Exception) {
+                    setLocality()
                     mCallBack.onFileReadFail(it)
                 }
             }
@@ -93,13 +97,6 @@ object GMPLocaliseSdk {
         }
     }
 
-    @JvmStatic
-    fun setLocality(iso: String) {
-        with(sharedPreferences?.edit()) {
-            this?.putString("iso", iso)
-            this?.apply()
-        }
-    }
 
     @JvmStatic
     fun getString(key: String): String {
@@ -142,5 +139,50 @@ object GMPLocaliseSdk {
         }
         return languages
     }
+
+    private fun setLocality() {
+        val availableTranslations = getAvailableLanguages()
+        if (!availableTranslations.isNullOrEmpty()) {
+            val locale = getCurrentLocales()
+            var locality =
+                availableTranslations.filter {
+                    it.contains(
+                        locale.toString().replace("_","-"),
+                        true
+                    )
+                }
+            if (!locality.isNullOrEmpty())
+                setLocality(locality[0])
+            else {
+                locality =
+                    availableTranslations.filter {
+                        it.contains(
+                            locale.language,
+                            true
+                        )
+                    }
+                if (!locality.isNullOrEmpty())
+                    setLocality(locality[0])
+                else
+                    setLocality(defaultIso)
+            }
+        }
+    }
+
+    private fun setLocality(iso: String) {
+        with(sharedPreferences?.edit()) {
+            this?.putString("iso", iso)
+            this?.apply()
+        }
+    }
+
+    private fun getCurrentLocales(): Locale {
+        return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            Resources.getSystem().configuration.locales.get(0)
+        } else {
+            Resources.getSystem().configuration.locale
+        }
+    }
+
 
 }
