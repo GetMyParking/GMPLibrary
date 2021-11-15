@@ -24,8 +24,11 @@ import com.gmp.forwardble.BluetoothLeService
 import com.gmp.forwardble.ScanLeDevice
 
 import com.gmp.gmplibrary.databinding.ActivityMainBinding
+import com.gmp.gmplocalise.GMPLocaliseSdk
+import com.gmp.gmplocalise.helper.GmpLocaliseCallBack
+import java.util.*
 
-class MainActivity : AppCompatActivity(), ServiceConnection, OnItemClickListener {
+class MainActivity : AppCompatActivity(), ServiceConnection, OnItemClickListener,GmpLocaliseCallBack {
     private var bluetoothDevice: BluetoothDevice? = null
     private var mBluetoothLeService: BluetoothLeService? = null
     lateinit var binder: ActivityMainBinding
@@ -40,6 +43,8 @@ class MainActivity : AppCompatActivity(), ServiceConnection, OnItemClickListener
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
             binder = ActivityMainBinding.inflate(LayoutInflater.from(this))
+        GMPLocaliseSdk.initialize(this)
+        GMPLocaliseSdk.updateTranslations("",this)
         init()
         setContentView(binder.root)
         val locationPermissionRequest = registerForActivityResult(
@@ -303,5 +308,20 @@ class MainActivity : AppCompatActivity(), ServiceConnection, OnItemClickListener
         }
 
         ScanLeDevice.startScanLeDevice(mLeScanCallbackNew, SCAN_PERIOD)
+    }
+
+    override fun onDBUpdateSuccess() {
+        val s= GMPLocaliseSdk.getString("app_name")
+        Log.d("Anand", "name=$s")
+    }
+
+    override fun onDBUpdateFail() {
+    }
+
+    override fun onFileReadSuccess() {
+    }
+
+    override fun onFileReadFail(exception: java.lang.Exception) {
+
     }
 }
