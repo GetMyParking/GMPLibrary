@@ -133,8 +133,8 @@ object GMPLocaliseSdk {
         this.defaultIso = defaultIso
     }
 
-    @JvmStatic
-    fun getAvailableLanguages(): List<String>? {
+
+    private fun getAvailableLanguages(): List<String>? {
         var languages: List<String>?
         runBlocking {
             languages = dbInstance?.translationDao()
