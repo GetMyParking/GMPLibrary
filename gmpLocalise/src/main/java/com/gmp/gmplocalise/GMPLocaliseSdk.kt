@@ -50,7 +50,12 @@ object GMPLocaliseSdk {
         return if (lastCacheDate <= 0) {
             true
         } else {
-            lastUpdateDate.before(Date(lastCacheDate))
+            return if (lastUpdateDate.after(Date(lastCacheDate))) {
+                true
+            } else {
+                setLocality()
+                false
+            }
         }
     }
 
@@ -64,7 +69,7 @@ object GMPLocaliseSdk {
 
         scope.launch {
 
-            parserUtils?.parseData( s3Url)?.collect {
+            parserUtils?.parseData(s3Url)?.collect {
                 if (it != null && it is TranslationResponse) {
                     mCallBack.onFileReadSuccess()
                     val translationEntityList =
@@ -85,11 +90,9 @@ object GMPLocaliseSdk {
                         mCallBack.onDBUpdateSuccess()
 
                     } else {
-                        setLocality()
                         mCallBack.onDBUpdateFail()
                     }
                 } else if (it is Exception) {
-                    setLocality()
                     mCallBack.onFileReadFail(it)
                 }
             }
@@ -147,7 +150,7 @@ object GMPLocaliseSdk {
             var locality =
                 availableTranslations.filter {
                     it.contains(
-                        locale.toString().replace("_","-"),
+                        locale.toString().replace("_", "-"),
                         true
                     )
                 }
