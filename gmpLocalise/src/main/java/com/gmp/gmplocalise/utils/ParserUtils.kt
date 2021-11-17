@@ -1,5 +1,7 @@
 package com.gmp.gmplocalise.utils
 
+import android.content.Context
+import com.gmp.gmplocalise.R
 import com.gmp.gmplocalise.model.*
 import com.google.gson.Gson
 import com.google.gson.stream.JsonReader
@@ -47,9 +49,9 @@ class ParserUtils {
                 val translations: Translations = iteratorItems.next()
 
                 val entity = TranslationEntity(
-                    iso = translations.iso,
+                    iso = language.iso,
                     value = translations.value,
-                    key = language.key
+                    key = translations.key
                 )
                 translationEntity.add(entity)
             }

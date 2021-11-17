@@ -1,6 +1,6 @@
 package com.gmp.gmplocalise.model
 
 data class TranslationData(
-    val key:String,
+    val iso:String,
     val translations:List<Translations>
 )

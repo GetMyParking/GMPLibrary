@@ -43,10 +43,7 @@ object GMPLocaliseSdk {
         sharedPreferences?.getLong("updated_date", 0L)?.let {
             lastCacheDate = it
         }
-        with(sharedPreferences?.edit()) {
-            this?.putLong("updated_date", lastUpdateDate.time)
-            this?.apply()
-        }
+
         return if (lastCacheDate <= 0) {
             true
         } else {
@@ -62,7 +59,8 @@ object GMPLocaliseSdk {
     @JvmStatic
     fun updateTranslations(
         s3Url: String,
-        mCallBack: GmpLocaliseCallBack
+        mCallBack: GmpLocaliseCallBack,
+        lastUpdateDate: Date
     ) {
         this.mCallBack = mCallBack
 
@@ -87,6 +85,10 @@ object GMPLocaliseSdk {
                         dbInstance?.translationDao()
                             ?.insertTranslations(translationEntityList)
                         setLocality()
+                        with(sharedPreferences?.edit()) {
+                            this?.putLong("updated_date", lastUpdateDate.time)
+                            this?.apply()
+                        }
                         mCallBack.onDBUpdateSuccess()
 
                     } else {

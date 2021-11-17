@@ -44,7 +44,7 @@ class MainActivity : AppCompatActivity(), ServiceConnection, OnItemClickListener
         super.onCreate(savedInstanceState)
             binder = ActivityMainBinding.inflate(LayoutInflater.from(this))
         GMPLocaliseSdk.initialize(this)
-        GMPLocaliseSdk.updateTranslations("",this)
+        GMPLocaliseSdk.updateTranslations("",this,Date())
         init()
         setContentView(binder.root)
         val locationPermissionRequest = registerForActivityResult(
