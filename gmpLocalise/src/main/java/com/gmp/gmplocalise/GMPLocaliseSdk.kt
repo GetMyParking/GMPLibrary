@@ -28,13 +28,13 @@ object GMPLocaliseSdk {
     }
 
     @JvmStatic
-    fun initialize(mContext: Context) {
+    fun initialize(mContext: Context): GMPLocaliseSdk {
 
         sharedPreferences = mContext.getSharedPreferences(
             "Gmp_Localise_Pref", Context.MODE_PRIVATE
         )
         dbInstance = GmpLocaliseDatabase.getInstance(mContext)
-
+        return this
     }
 
     @JvmStatic
